@@ -37,6 +37,7 @@
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
                     <div class="row justify-content-center">
+                        <a href = "/user?userId=${cv.author.id}">
                         <div class="col-2">
                             <#if cv.author.avatarId??>
                                 <img alt="" width="30" height="24" class="d-inline-block align-text-top" src="/files/${cv.author.avatarId}"/>
@@ -47,6 +48,7 @@
                         <div class="col-3">
                             <h4 class="my-0 font-weight-normal">${cv.author.firstName} ${cv.author.lastName}</h4>
                         </div>
+                            </a>
                     </div>
                 </div>
 

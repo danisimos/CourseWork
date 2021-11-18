@@ -29,42 +29,40 @@
 
 <br>
 
+<div class="row justify-content-center">
+        <div class="col-2">
+            <#if userOnPage.avatarId??>
+                <img alt="" width="30" height="24" class="d-inline-block align-text-top" src="/files/${userOnPage.avatarId}"/>
+            <#else>
+                <img alt="" width="30" height="24" class="d-inline-block align-text-top" src="/resources/images/no-avatar.png"/>
+            </#if>
+        </div>
+        <div class="col-3">
+            <h4 class="my-0 font-weight-normal">${userOnPage.firstName} ${userOnPage.lastName}</h4>
+        </div>
+</div>
+
 <div class="container">
-    <div class="row justify-content-center">
-    <#list vacancyList as vacancy>
+    <div class="row justify-content-center" id="post-list">
+        <#list curriculumVitaeList as cv>
 
-        <div class="col-8">
-            <div class="card-deck mb-3 text-center">
-                <div class="card mb-4 box-shadow">
-                    <div class="card-header">
-                        <div class="row justify-content-center">
-                            <a href = "/user?userId=${vacancy.author.id}">
-                            <div class="col-2">
-                        <#if vacancy.author.avatarId??>
-                            <img alt="" width="30" height="24" class="d-inline-block align-text-top" src="/files/${vacancy.author.avatarId}"/>
-                        <#else>
-                            <img alt="" width="30" height="24" class="d-inline-block align-text-top" src="/resources/images/no-avatar.png"/>
-                        </#if>
-                            </div>
-                            <div class="col-3">
-                        <h4 class="my-0 font-weight-normal">${vacancy.author.firstName} ${vacancy.author.lastName}</h4>
-                            </div>
-                            </a>
+            <div class="col-8">
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 box-shadow">
+
+                        <div class="card-body">
+                            <h3 class="card-title pricing-card-title">${cv.content}</h3>
                         </div>
-                    </div>
-
-                    <div class="card-body">
-                        <h3 class="card-title pricing-card-title">${vacancy.content}</h3>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <br>
+            <br>
         </#list>
     </div>
-
 </div>
+
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
